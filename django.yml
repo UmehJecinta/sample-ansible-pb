@@ -2,28 +2,28 @@
   hosts: all #slaves of all inventory
   become: yes #to become a root user
   tasks: #steps to the deployment you want to run
-    # - name: i want to run sudo apt update
-    #   apt:
-    #     update_cache: yes
-    # - name: i want to run sudo apt upgrade
-    #   apt:
-    #     upgrade: safe
-    # - name: i want to install python3-pip
-    #   apt:
-    #     name: python3-pip
-    # - name: i want to install gunicorn
-    #   pip:
-    #     name: gunicorn
-    # - name: i want to install nginx
-    #   apt:
-    #     name: nginx
-    # - name: i want to clone a repository
-    #   git :
-    #     repo: https://github.com/jacinMI/Django-Poll-App.git
-    #     dest: /home/ubuntu/django-project
-    # - name: i want to install requirements.txt
-    #   pip:
-    #     requirements: /home/ubuntu/django-project/requirements.txt
+    - name: i want to run sudo apt update
+      apt:
+        update_cache: yes
+    - name: i want to run sudo apt upgrade
+      apt:
+        upgrade: safe
+    - name: i want to install python3-pip
+      apt:
+        name: python3-pip
+    - name: i want to install gunicorn
+      pip:
+        name: gunicorn
+    - name: i want to install nginx
+      apt:
+        name: nginx
+    - name: i want to clone a repository
+      git :
+        repo: https://github.com/jacinMI/Django-Poll-App.git
+        dest: /home/ubuntu/django-project
+    - name: i want to install requirements.txt
+      pip:
+        requirements: /home/ubuntu/django-project/requirements.txt
     - name: i want to copy service file to my repo
       copy:
         src: gunicorn.service
