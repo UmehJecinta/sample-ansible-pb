@@ -1,0 +1,9 @@
+django-ansible.pem
+file1
+gunicorn.service
+nginx-default
+*.log
+*.retry
+.env
+__pycache__/
+*.pyc
